@@ -11,6 +11,9 @@
           - [Background-image](#background-image)
           - [Clip-path](#clip-path)
           - [Keyframes Animations](#keyframes-animations)
+        - [Three Pillars to Write Good HTML and CSS](#three-pillars-to-write-good-html-and-css)
+    - [How CSS Works: behind the scenes](#how-css-works-behind-the-scenes)
+    - [CSS Architecture Mindset](#css-architecture-mindset)
 
 ### Normalize CSS
 
@@ -63,3 +66,130 @@ You can check this website [Clippy](https://bennettfeely.com/clippy/) to play wi
 For browser perfomance is best to animate only 2 properties: `opacity` and `translate`, because the browsers are optimized for.
 
 *Hack*: use `backface-visibility: hidden;` to fix the shaking at the end of the animation. Also, this is used for not showing the back of the element when animating it.
+
+
+##### Three Pillars to Write Good HTML and CSS
+
+[Summary](#summary)
+
+1. Responsive Design - fluid layouts, media queries, responsive images, correct units, desktop-first vc mobile-first.
+   
+2. Maintainable and Scalable Code - code needs to be clean, easy to understand, growth, reusable, organized files, good name classes and good html structure.
+   
+3. Web Performance - make it faster and smaller in size. Less http request as possible, write less code, compress the code, use a CSS preprocessor, less images and compress images.
+
+
+### How CSS Works: behind the scenes
+
+[Summary](#summary)
+
+![how browser works](images/html-load.png)
+
+So, as we can see above that is the basic structure to load a webpage in the browser.
+
+CSS Rule has 2 parts:
+1. selector
+2. declaration block (property: declared value)
+
+![CSS Rule](images/css-rule.png)
+
+Cascade is the process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a certain element. It resolves the conflicts by following the rule below:
+
+`IMPORTANCE` ==> `SPECIFICITY` ==> `SOURCE ORDER`
+
+Specificity is decided by:
+1. Inline Styles
+2. IDs
+3. Classes, pseudo-classes, attribute
+4. Elements, pseudo-elements
+
+Value Processing in CSS 
+
+![value processing](images/value-processing1.png)
+
+![value processing continuation](images/value-processing2.png)
+
+![value processing explanation](images/value-processing3.png)
+
+![value calculation](images/value-calculation.png)
+
+Each CSS property has an initial value if nothing is declared, and if there is no inheritance.
+
+Browsers specify a root font-size (usually 16px).
+
+Percentages and relative values are always converted to pixels.
+
+The `inherit` keyword forces inheritance on a certain property.
+
+The `initial` keyword resets a property to its initial value.
+
+**Visual Formatting Model** is an algorithm that calculates boxes and determines the layout of these boxes for each element in the render tree, in order to determine the final layout of the page. It takes into account:
+1. Dimensions of the boxes: the box model
+
+The Box Model:
+
+![box model](images/box-model.png)
+
+![box model1](images/box-model1.png)
+
+![box model2](images/box-model2.png)
+
+![box model3](images/box-model3.png)
+
+2. Box type: inline, block, and inline-block
+
+![box type](images/box-type.png)
+
+3. Positioning scheme: floats and positioning
+
+![positioning schemes](images/positioning.png)
+
+4. Stacking contexts
+
+![stacking](images/stacking.png)
+
+5. Other elements in the render tree
+6. Viewport size, dimensions of images, etc
+
+### CSS Architecture Mindset
+
+[Summary](#summary)
+
+`Think` ==> `Build` ==> `Architect`
+
+First think about the layout before writting code.
+Then build your layout in HTML and CSS with consistent structure for naming classes, while also creating a logical architecture for CSS with files and folders.
+
+
+**Component-Driven Design** is a principle used across all software developer. With this principle we try to divide the page into modular components. A modular building block that builds the layout of the page. It should also be reusable across a project and between different projects. For ex. create a library with your components and then use throughout your projects. The components should be independent, allowing them to be used anywhere on the page.
+
+**BEM (Block Element Modifier)** is a system for creating meaningful classes names. It is usually written following the formula below:
+
+```
+.block {}
+.block__element {}
+.block__element--modifier {}
+```
+
+Where:
+1. Block is a standalone component that is meaningful on its own
+2. Element is part of a block that has no standalone meaning
+3. Modifier is a different version o a block or an element
+
+Ex. `.recipe {}`, `.recipe__stat {}`, `.recipe__stat--name {}`
+
+**7-1 Pattern**
+
+We have 7 different folders for partial Sass files and 1 main Sass file to import all other files into a compiled CSS stylesheet.
+
+Ex.
+```
+base/
+components/
+layout/
+pages/
+themes/
+abstracts/  ==> variables/mixins
+vendors/ ==> 3rd party css
+```
+
