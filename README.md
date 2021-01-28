@@ -14,6 +14,7 @@
         - [Three Pillars to Write Good HTML and CSS](#three-pillars-to-write-good-html-and-css)
     - [How CSS Works: behind the scenes](#how-css-works-behind-the-scenes)
     - [CSS Architecture Mindset](#css-architecture-mindset)
+    - [SASS](#sass)
 
 ### Normalize CSS
 
@@ -192,4 +193,30 @@ themes/
 abstracts/  ==> variables/mixins
 vendors/ ==> 3rd party css
 ```
+
+### SASS
+
+[Summary](#summary)
+
+SASS is a CSS preprocessor, an extension of CSS that adds power and elegance to the basic language.
+
+SASS source code is **compiled** into CSS code.
+
+Some of the features:
+1. Variables
+2. Nesting - nest selectors inside one another
+3. Operators - mathematical operations inside CSS
+4. Partial and imports - write in different files and import all to a single file at the end
+5. Mixins - write reusable code
+6. Functions - similar to mixins, but they can produce a value that can then be used
+7. Extends - make different selectors inherit declarations that are common to all of them
+8. Control Directives - for writing complex code using conditionals and loops (not going to be covered in the course)
+
+What is the difference between Sass and SCSS?
+They are basically different syntaxes.
+The Sass it's the original one (Sass like language). It is indentation sensitive and doesn't use curly braces or semi-colons. 
+While SCSS stands for sassy CSS. Preserves the way original CSS looks like.
+
+
+
 
