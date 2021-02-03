@@ -15,6 +15,7 @@
     - [How CSS Works: behind the scenes](#how-css-works-behind-the-scenes)
     - [CSS Architecture Mindset](#css-architecture-mindset)
     - [SASS](#sass)
+    - [Basic Responsive Design Principles](#basic-responsive-design-principles)
 
 ### Normalize CSS
 
@@ -216,6 +217,21 @@ What is the difference between Sass and SCSS?
 They are basically different syntaxes.
 The Sass it's the original one (Sass like language). It is indentation sensitive and doesn't use curly braces or semi-colons. 
 While SCSS stands for sassy CSS. Preserves the way original CSS looks like.
+
+Partial SASS files start with a `_` in their name. Ex. `_base.scss`
+
+### Basic Responsive Design Principles
+
+[Summary](#summary)
+
+1. Fluid Grids and Layouts - allow content to easily adapt to the current viewport width used to browse the website. Uses % rather than px for all layout related lengths.
+    - Float
+    - Flexbox
+    - Grid - 2 dimensions
+    ![flexible layouts](images/flexible-layout.png)
+    
+2. Flexible/Responsive Images - images behave differently than content, and so we need to ensure that they also adapt nicely to the current viewport.
+3. Media Queries - to change styles on certain viewport widths (breakpoints), allowing us to create different version of our website for different widths.
 
 
 
