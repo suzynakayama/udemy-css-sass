@@ -1,12 +1,12 @@
 {
-  "name": "Natours",
+  "name": "cssgrid",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass sass/main.scss css/style.css -w"
+    "compile": "node-sass main.scss main.css -w"
   },
-  "author": "Suzy",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^5.0.0"

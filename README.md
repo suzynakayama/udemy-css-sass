@@ -16,6 +16,7 @@
     - [CSS Architecture Mindset](#css-architecture-mindset)
     - [SASS](#sass)
     - [Basic Responsive Design Principles](#basic-responsive-design-principles)
+    - [Attribute Selectors](#attribute-selectors)
 
 ### Normalize CSS
 
@@ -229,10 +230,19 @@ Partial SASS files start with a `_` in their name. Ex. `_base.scss`
     - Flexbox
     - Grid - 2 dimensions
     ![flexible layouts](images/flexible-layout.png)
-    
+
 2. Flexible/Responsive Images - images behave differently than content, and so we need to ensure that they also adapt nicely to the current viewport.
 3. Media Queries - to change styles on certain viewport widths (breakpoints), allowing us to create different version of our website for different widths.
 
+### Attribute Selectors
+
+[Summary](#summary)
+
+[class^="col-"] - selects all the elements that the attribute class starts with `col-`
+
+[class*="col-"] - selects all the elements that the attribute class contains `col-`
+
+[class$="col-"] - selects all the elements that the attribute class ends with `col-`
 
 
 
