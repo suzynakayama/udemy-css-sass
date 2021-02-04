@@ -17,6 +17,7 @@
     - [SASS](#sass)
     - [Basic Responsive Design Principles](#basic-responsive-design-principles)
     - [Attribute Selectors](#attribute-selectors)
+    - [Outline](#outline)
 
 ### Normalize CSS
 
@@ -244,5 +245,16 @@ Partial SASS files start with a `_` in their name. Ex. `_base.scss`
 
 [class$="col-"] - selects all the elements that the attribute class ends with `col-`
 
+### Outline
 
+[Summary](#summary)
+
+To add an offset border we can use the outline property and set the outline-offset property. Ex.
+
+```css
+.img {
+  outline: 1rem solid black;
+  outline-offset: 2rem;
+}
+```
 

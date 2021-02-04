@@ -1,6 +1,6 @@
-@import 'abstract/functions';
-@import 'abstract/mixins';
-@import 'abstract/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
 @import 'base/animations';
 @import 'base/base';
@@ -8,7 +8,10 @@
 @import 'base/utilities';
 
 @import 'components/button';
+@import 'components/composition';
+@import 'components/feature-box';
 
 @import 'layout/header';
+@import 'layout/grid';
 
 @import 'pages/home';
