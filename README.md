@@ -18,6 +18,7 @@
     - [Basic Responsive Design Principles](#basic-responsive-design-principles)
     - [Attribute Selectors](#attribute-selectors)
     - [Outline](#outline)
+    - [Form Label Trick](#form-label-trick)
 
 ### Normalize CSS
 
@@ -258,3 +259,17 @@ To add an offset border we can use the outline property and set the outline-offs
 }
 ```
 
+### Form Label Trick
+
+[Summary](#summary)
+
+```scss
+.form {
+  // select the input placeholder and the adjacent sibling label
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden; /* it will make the label is gone */
+        transform: translateY(-4rem);
+    }
+}
+```
