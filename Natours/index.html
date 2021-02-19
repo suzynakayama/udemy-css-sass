@@ -13,6 +13,41 @@
         <title>Natours | Exciting tours for adventurous people</title>
     </head>
     <body>
+        <div class="navigation">
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <span>01</span>
+                        <a href="#" class="navigation__link">About Natours</a>
+                    </li>
+                    <li class="navigation__item">
+                        <span>02</span>
+                        <a href="#" class="navigation__link">Your benefits</a>
+                    </li>
+                    <li class="navigation__item">
+                        <span>03</span>
+                        <a href="#section-tours" class="navigation__link">Popular tours</a>
+                    </li>
+                    <li class="navigation__item">
+                        <span>04</span>
+                        <a href="#" class="navigation__link">Stories</a>
+                    </li>
+                    <li class="navigation__item">
+                        <span>05</span>
+                        <a href="#" class="navigation__link">Book now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
         <header class="header">
             <div class="header__logo-box">
                 <img src="images/logo-white.png" alt="Natours logo" class="header__logo">
@@ -92,7 +127,7 @@
                 </div>
             </section>
 
-            <section class="section-tours">
+            <section class="section-tours" id="section-tours">
                 <div class="u-center-text u-margin-bottom-lg">
                     <h2 class="heading-secondary">
                         Most popular tours
@@ -123,7 +158,7 @@
                                         <p class="card__price-only">Only</p>
                                         <p class="card__price-value">$297</p>
                                     </div>
-                                    <a href="#" class="btn btn--white">Book now</a>
+                                    <a href="#popup" class="btn btn--white">Book now</a>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +187,7 @@
                                         <p class="card__price-only">Only</p>
                                         <p class="card__price-value">$497</p>
                                     </div>
-                                    <a href="#" class="btn btn--white">Book now</a>
+                                    <a href="#popup" class="btn btn--white">Book now</a>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +216,7 @@
                                         <p class="card__price-only">Only</p>
                                         <p class="card__price-value">$897</p>
                                     </div>
-                                    <a href="#" class="btn btn--white">Book now</a>
+                                    <a href="#popup" class="btn btn--white">Book now</a>
                                 </div>
                             </div>
                         </div>
@@ -321,5 +356,22 @@
                 </div>
             </div>
         </footer>
+
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src="images/nat-8.jpg" alt="Tour photo" class="popup__img">
+                    <img src="images/nat-9.jpg" alt="Tour photo" class="popup__img">
+                </div>
+
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-sm">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-sm">Important &ndash; Please read these terms before booking</h3>
+                    <p class="popup__text u-margin-bottom-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae id repudiandae accusantium incidunt cupiditate facere illo dolorum esse sed? Magnam assumenda minima laboriosam similique nihil, quaerat totam nesciunt quasi ad dignissimos repudiandae recusandae asperiores, optio eum beatae cum. Pariatur molestias similique sapiente est, rerum et consequatur totam autem veritatis iusto!</p>
+                    <a href="#" class="btn btn--green">Book now</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
