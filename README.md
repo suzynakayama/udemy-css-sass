@@ -19,6 +19,7 @@
     - [Attribute Selectors](#attribute-selectors)
     - [Outline](#outline)
     - [Form Label Trick](#form-label-trick)
+    - [Media Queries](#media-queries)
 
 ### Normalize CSS
 
@@ -273,3 +274,13 @@ To add an offset border we can use the outline property and set the outline-offs
     }
 }
 ```
+
+### Media Queries
+
+[Summary](#summary)
+
+Good idea for media queries breakpoints:
+![media queries](images/mq.png)
+
+Note. In media queries, 1em and 1rem are not affected by the root font-size, they are always related to the browser font-size, usually 16px.
+`em` is better than `rem` to be used on media queries.

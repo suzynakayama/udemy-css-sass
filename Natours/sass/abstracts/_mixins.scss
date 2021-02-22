@@ -12,3 +12,40 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+// Media Query Manager
+/*
+0 - 600px           Phone
+600 - 900px         Tablet Portrait
+900 - 1200px        Tablet Landscape
+1200 - 1800px       Laptop (Our normal style)
+1800px  +           Big Desktop
+*/
+// @mixin respond-phone {
+//     @media (max-width: 600px) {
+//         @content;  ==> allows the code we write to be transfered to here
+//     }
+// }
+
+/*
+- phone
+- tab-port
+- tab-land
+- bg-desktop
+*/
+//! Note. In media queries, 1em and 1rem are not affected by the root font-size, they are always related to the browser font-size, usually 16px
+//+ em is better than rem to be used on media queries
+@mixin mq-manager($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };    // 600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content };   // 900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content };      // 1200px
+    }
+    @if $breakpoint == bg-desktop {
+        @media (min-width: 112.5em) { @content };   // 1800px
+    }
+}
