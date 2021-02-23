@@ -11,6 +11,10 @@
     visibility: hidden;
     transition: all 0.3s;
 
+    @include mq-manager(tab-port) {
+        text-align: center;
+    }
+
     // when we click on the btn, the url changes and adds the target to it, so we can animate through the target pseudo class
     &:target {
         opacity: 1;
@@ -33,6 +37,10 @@
     &__left {
         width: 33.3333333%;
         display: table-cell;
+
+        @include mq-manager(tab-port) {
+            display: none;
+        }
     }
 
     &__right {
@@ -62,6 +70,10 @@
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;      // adds hyphens to the text, but in order for this to work, your html needs to have an specified language (lang=en)
+
+        @include mq-manager(tab-port) {
+            text-align: left;
+        }
     }
 
     &:target &__content {
