@@ -20,6 +20,7 @@
     - [Outline](#outline)
     - [Form Label Trick](#form-label-trick)
     - [Media Queries](#media-queries)
+    - [Responsive images](#responsive-images)
 
 ### Normalize CSS
 
@@ -284,3 +285,47 @@ Good idea for media queries breakpoints:
 
 Note. In media queries, 1em and 1rem are not affected by the root font-size, they are always related to the browser font-size, usually 16px.
 `em` is better than `rem` to be used on media queries.
+
+### Responsive images
+
+[Summary](#summary)
+
+Responsive image is serving the right image to the right screen size and device, in order to avoid downloading unnecessary large images on smaller screens.
+
+Ex. serve a 1mb image to a laptop and a 200kb image to a mobile.
+
+There are mainly 3 use cases for responsive image:
+
+1. Resolution Switching - decrease image resolution on smaller screens, so same image, but smaller version.
+2. Density Switching - special case of resolution switching where the screen size doesn't matter, but the screen pixel density does. Pixel density is the amount o pixels found in an inch or a cm. So what matters is if the screen is high resolution (2x) or low resolution(1x). So we decrease the image resolution depending on the screen resolution.
+3. Art Direction - when you serve a whole new image to a different screen size.
+
+![image resolution](images/img-resolution.png)
+
+Ex.
+```html
+<picture class="footer_logo">
+    <source srcset="images/logo-green-small-1x.png 1x, images/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+    <img srcset="images/logo-green-1x.png 1x, images/logo-green-2x.png 2x" alt="full logo" src="images/logo-green-2x.png">
+</picture>
+
+<!-- 
+1. We use the picture element, which allows us to put different options for one image to be shown 
+2. Then we used the source element with the srcset attribute, where we were able to serve a smaller image for our media query phone size
+3. Then we added an img element, also with the srcset attribute to serve regular size image.
+Note. srcset attribute is useful to serve different images depending on the pixel density you need
+4. We added the src attribute just in case the srcset doesn't work on the specific browser the user is using
+-->
+```
+
+Another example:
+```html
+<img srcset="images/nat-1.jpg 300w, images/nat-1-large.jpg 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="photo 1" class="composition__photo composition__photo--p1" src="images/nat-1-large.jpg">
+
+<!-- 
+1. We first set the images and their exact size on the srcset attribute
+2. We defined different media queries and the size the image should be when within that media query - we found out dividing the image size on the page by the number of the pixels on the query (56.25em = 900px). Ex. 171/900 => aprox. 20 => 20vw
+3. We set the default image size to be 300px
+4. We added the src attribute just in case the srcset doesn't work on the specific browser the user is using
+-->
+```
