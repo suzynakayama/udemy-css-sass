@@ -21,6 +21,8 @@
     - [Form Label Trick](#form-label-trick)
     - [Media Queries](#media-queries)
     - [Responsive images](#responsive-images)
+    - [@supports](#supports)
+    - [Setting a Simple Build Process](#setting-a-simple-build-process)
 
 ### Normalize CSS
 
@@ -328,4 +330,56 @@ Another example:
 3. We set the default image size to be 300px
 4. We added the src attribute just in case the srcset doesn't work on the specific browser the user is using
 -->
+```
+
+### @supports
+
+[Summary](#summary)
+
+In order to support different browsers, we can use the @support feature.
+
+Check if the property in parenthesis is supported by the browser, if yes, apply whatever is inside the curly braces. Ex. backdrop-filter doesn't work on Firefox.
+
+```Scss
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .8);
+    }
+```
+
+### Setting a Simple Build Process
+
+[Summary](#summary)
+
+In the Natours Project we created a simple build process to transform our css files into only one ready for production.
+
+![build process](images/build-proc.png)
+
+1. We compile our sass files into one css file
+2. We merge the content of the css file with the css icon-font file (Concatenation)
+3. Automatically prefix our code (Prefixing)
+4. Compress the css file
+   
+On the package.json file we added the follow scripts:
+```json
+{
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css -output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+}
+```
+
+Dev dependencies installed:
+```json
+{
+    "autoprefixer": "^10.2.4",
+    "concat": "^1.0.3",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1"
+}
 ```

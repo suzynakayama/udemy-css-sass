@@ -11,6 +11,13 @@
     visibility: hidden;
     transition: all 0.3s;
 
+    // Check if the property in parenthesis is supported by the browser, if yes, apply whatever is inside the curly braces
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .8);
+    }
+
     @include mq-manager(tab-port) {
         text-align: center;
     }
