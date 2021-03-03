@@ -23,6 +23,7 @@
     - [Responsive images](#responsive-images)
     - [@supports](#supports)
     - [Setting a Simple Build Process](#setting-a-simple-build-process)
+    - [Flexbox](#flexbox)
 
 ### Normalize CSS
 
@@ -383,3 +384,19 @@ Dev dependencies installed:
     "postcss-cli": "^8.3.1"
 }
 ```
+
+### Flexbox
+
+Is a "new" module in CCS3 that makes it easy to align elements to one another, in different directions and orders.
+Main idea is to give the container the ability to expand and to shrink to best use all the available space. It easily replace the float layout, using less and more readable and logical code. It's best for one-dimensional layouts. For two-dimensional is better to use grid.
+
+Flex Container is the element that we use the flex property. We create a flex container using the display property:
+`display: flex;`
+We also have the `display: flex-inline;` but it's very hardly used.
+
+Then all the direct children from the flex container are called Flex Items.
+
+![flexbox](images/flex.png)
+
+![flexbox1](images/flex1.png)
+
