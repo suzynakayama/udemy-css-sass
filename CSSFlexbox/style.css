@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    background-color: #f1425d;
+    padding: 30px;
+    margin: 30px;
+    color: #fff;
+    font-size: 30px;
+    flex-grow: 1;
+    /* they will all occupy all the space they can, leaving only the margin space */
+    flex-wrap: wrap;
+    /*  creates new line whenever necessary */
+    align-content: flex-start;
+    /* aligns the rows (content) to the start of the container */
+}
+
+.i2 {
+    flex-basis: 20%;
+    /* decide the width of the element, instead of using the width property */
+}
+
+.i3 {
+    flex-basis: 300px;
+    flex-shrink: 0;
+    /* it [dis]allows the element to shrink when viewport size changes. If 0, it will not shrink */
+    /* using the flex property shorthand:
+    flex: <grow> <shrink> <basis> */
+}
+
+.i4 {
+    order: -1;      
+    /* carries this item to the beginning, since all of them start with order 0. */
+    flex-grow: 3;
+    /* this will grow 3 times more than the items, so it will have the triple of the size */
+}
