@@ -24,6 +24,7 @@
     - [@supports](#supports)
     - [Setting a Simple Build Process](#setting-a-simple-build-process)
     - [Flexbox](#flexbox)
+    - [SVG](#svg)
 
 ### Normalize CSS
 
@@ -399,4 +400,26 @@ Then all the direct children from the flex container are called Flex Items.
 ![flexbox](images/flex.png)
 
 ![flexbox1](images/flex1.png)
+
+Using the flex property shorthand:
+    `flex: <grow> <shrink> <basis>`
+
+### SVG
+
+[Summary](#summary)
+
+
+Best Practices nowadays to use SVG than icon fonts.
+
+Scalable Vector Graphics (SVG) is an Extensible Markup Language (XML)-based vector image format for two-dimensional graphics with support for interactivity and animation. 
+
+We are going to use the `sprite.svg` file, which is a file that contains all the svg we want to use. Doing like this, we are able to have only ONE http request to get all the svgs, instead of making several requests.
+
+To add the svg into the HTML:
+```html
+<svg class="search__icon">
+    <use xlink:href="img/sprite.svg# icon-magnifying-glass"></use>
+</svg>
+```
+Note. this will only work on a web server.
 
