@@ -404,6 +404,8 @@ Then all the direct children from the flex container are called Flex Items.
 Using the flex property shorthand:
     `flex: <grow> <shrink> <basis>`
 
+Note. when using flexbox, using margin-right or left auto will help creating space after/before the item.
+
 ### SVG
 
 [Summary](#summary)
@@ -423,3 +425,4 @@ To add the svg into the HTML:
 ```
 Note. this will only work on a web server.
 
+CSS NOTE. z-index only works if the item has a position defined.
