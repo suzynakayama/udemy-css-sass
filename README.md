@@ -25,6 +25,7 @@
     - [Setting a Simple Build Process](#setting-a-simple-build-process)
     - [Flexbox](#flexbox)
     - [SVG](#svg)
+    - [CSS Grid Layout](#css-grid-layout)
 
 ### Normalize CSS
 
@@ -427,3 +428,16 @@ Note. this will only work on a web server.
 
 CSS NOTE. z-index only works if the item has a position defined.
 
+### CSS Grid Layout
+
+[Summary](#summary)
+
+Brand new module that brings a 2 dimensional grid system to CSS. It replaces float layouts, using less, and more readable and logical CSS and HTML.
+
+![grid terminology](images/grid-terminology1.png)
+
+![grid terminology](images/grid-terminology2.png)
+
+[first grid](https://codepen.io/suzynakayama/pen/gOgxEYM)
+
+[grid challenge](https://codepen.io/suzynakayama/pen/qBRXvXB?editors=0110)
