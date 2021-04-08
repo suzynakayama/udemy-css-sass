@@ -441,3 +441,56 @@ Brand new module that brings a 2 dimensional grid system to CSS. It replaces flo
 [first grid](https://codepen.io/suzynakayama/pen/gOgxEYM)
 
 [grid challenge](https://codepen.io/suzynakayama/pen/qBRXvXB?editors=0110)
+
+Naming the grid lines:
+```css
+.container {
+    display: grid;
+    grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end];
+    grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px [grid-end];
+}
+.header {
+    grid-row: header-start / header-end;
+    grid-column: col-start 1 / grid-end;
+}
+```
+
+Using grid-area:
+```css
+.container {
+    display: grid;
+    grid-template-rows: 100px 200px;
+    grid-template-columns: repeat(3, 1fr) 200px [grid-end];
+    grid-template-areas: "header header header header"
+    "box box box box";
+}
+.header {
+    grid-row: header-start / header-end;
+    grid-column: col-start 1 / grid-end;
+    // OR
+    grid-area: header;
+}
+```
+
+Note. if you want the cell to be empty and you are using grid-template-areas, you just add a `.` to the space. Ex. `grid-template-areas: "header header header ."`
+
+Explicit grid is the one we define. Implicit grip is the one that we did not define, but since we had more items, CSS automatically added more tracks/rows.
+
+In order to style the Implicit grid, we can use `grid-auto-rows/columns/flow...`.
+
+[Aligning Items and Tracks Pen](https://codepen.io/suzynakayama/pen/QWdOOVO)
+
+Note. `grid-auto-flow: row dense;` using the `dense` keyword makes CSS automatically fill the empty space with one of the items.
+
+[Max/Min Content and Auto-fit/fill Pen](https://codepen.io/suzynakayama/pen/poRdpjx?editors=0100)
+
+Auto-fill will automatically create the space to fit as many item as possible according to their size and the container size. So, for example, creates 10 columns because it fits the container, even if we have only 7 items.
+
+Auto-fit, on the other hand, will still create the space to fit, just like auto-fill, but if there is extra space, it will just leave it blank. Here, it still creates 10 columns, but leave the extra 3 with width 0, collapsing them. Using the `auto-fit` with `min-max` is a great trick to create really responsive layouts.
+
+```css
+.container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 150px;
+}
+```
