@@ -1,0 +1,26 @@
+%heading {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1 {
+    //# here we extend the heading - this is going to copy the specific heading code into the %heading selector
+    //! different from mixin because it work the other way around, it copies the %heading into each heading
+    @extend %heading;
+}
+
+.heading-2 {
+    @extend %heading;
+}
+
+.heading-3 {
+    @extend %heading;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 1.9rem;
+
+    &--light { color: $color-grey-light-1; }
+    &--dark { color: $color-grey-dark-1; }
+}
