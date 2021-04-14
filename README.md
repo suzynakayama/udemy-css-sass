@@ -494,3 +494,8 @@ Auto-fit, on the other hand, will still create the space to fit, just like auto-
     grid-auto-rows: 150px;
 }
 ```
+
+Note. Most complex emmet from the course - adding all the figures and images to the Nexter image gallery:
+```
+(figure.gallery__item.gallery__item--$>img.gallery__img[src="img/gal-$.jpeg"][alt="img $"])*14
+```
