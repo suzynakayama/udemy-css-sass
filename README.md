@@ -499,3 +499,9 @@ Note. Most complex emmet from the course - adding all the figures and images to 
 ```
 (figure.gallery__item.gallery__item--$>img.gallery__img[src="img/gal-$.jpeg"][alt="img $"])*14
 ```
+
+Note. Ignored by CSS grid:
+- floats
+- display inline-block
+- display table cell
+- vertically align

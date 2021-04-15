@@ -13,6 +13,9 @@
     //# here we extend the heading - this is going to copy the specific heading code into the %heading selector
     //! different from mixin because it work the other way around, it copies the %heading into each heading
     @extend %heading;
+    font-size: 4.5rem;
+    color: $color-grey-light-1;
+    line-height: 1;
 }
 
 .heading-2 {
